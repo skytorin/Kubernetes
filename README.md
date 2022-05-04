@@ -45,7 +45,7 @@ complete -F __start_kubectl k
 
 ## Быстрое переключение контекста и namespace
 Установка kubeens и kubectx
-` ``
+```
 git clone https://github.com/ahmetb/kubectx
 sudo cp kubectx /usr/local/bin/
 sudo cp kubens /usr/local/bin/
