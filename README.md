@@ -1,27 +1,38 @@
-# Kubernetes
+# K u b e r n e t e s   (k8s)
+
+## Использование Minikube
+Веб дашборд с информацией о класере
+```bash
+minikube dashboard
+```
+Создание сервиса в minikube
+```bash
+minikube service app-deployment
+```
+
 
 ## Установка kubectl в Linux
 1. Загружаем последнюю версию kubectl с помощью команды:
-```
+```bash
 curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
 ```
-или определенную версию
+или определенную версию:
+```bash
+export KUBECTL_VERSION=v1.19.2
+curl -LO "https://storage.googleapis.com/kubernetes-release/release/${KUBECTL_VERSION}/bin/linux/amd64/kubectl"
 ```
-curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.19.0/bin/linux/amd64/kubectl
+2. Перемещаем двоичный файл в директорию из переменной окружения PATH:
+```bash
+sudo mv kubectl /usr/local/bin/kubectl
 ```
 
-2. Делаем двоичный файл kubectl исполняемым:
-```
-chmod +x ./kubectl
-```
-
-3. Перемещаем двоичный файл в директорию из переменной окружения PATH:
-```
-sudo mv ./kubectl /usr/local/bin/kubectl
-```
+3. Делаем двоичный файл kubectl исполняемым:
+```bash
+sudo chmod +x /usr/local/bin/kubectl
+````
 
 4. Проверяем версию :
-```
+```bash
 kubectl version --client
 ```
 
@@ -37,37 +48,38 @@ source <(kubectl completion bash)
 echo "source <(kubectl completion bash)" >> ~/.bashrc 
 ```
 
-Псевдоним для kubectl, который можно интегрировать с автодополнениями
+Псевдоним для kubectl, который можно интегрировать с автодополнениями:
 ```bash
 alias k=kubectl
 complete -F __start_kubectl k
 ```
 
+
 ## Быстрое переключение контекста и namespace
-Установка kubeens и kubectx
-```
+Установка kubens и kubectx:
+```bash
 git clone https://github.com/ahmetb/kubectx
 sudo cp kubectx /usr/local/bin/
 sudo cp kubens /usr/local/bin/
 ```
 
-Перечислить все контексты
-```
+Перечислить все контексты:
+```bash
 kubectx
 ```
 
-Переключиться на указанный контекст
-```
+Переключиться на указанный контекст:
+```bash
 kubectx kubernetes-admin@kubernetes
 ```
 
-Перечислить все пространства имен
-```
+Перечислить все пространства имен:
+```bash
 kubens
 ```
 
-Переключиться в назначенное пространство имен
-```
+Переключиться в назначенное пространство имен:
+```bash
 kubens kube-system
 ```
 
