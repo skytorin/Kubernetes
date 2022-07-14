@@ -1,4 +1,4 @@
-# K u b e r n e t e s   (k8s)
+# Kubernetes (k8s)
 
 ## Использование Minikube
 Веб дашборд с информацией о класере
