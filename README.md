@@ -6,9 +6,16 @@
 curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 \
 && chmod +x minikube
 ```
-Запуск Minikube:
+
+Чтобы исполняемый файл Minikube был доступен из любой директории, выполняем следующие команды:
 ```bash
-minikube start --vm-driver=<driver_name>
+sudo mkdir -p /usr/local/bin/
+sudo install minikube /usr/local/bin/
+
+```
+Запуск Minikube в Docker:
+```bash
+minikube start --vm-driver=none
 ```
 
 Статус Minikube:
